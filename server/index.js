@@ -4,13 +4,13 @@ import { Server as SocketServer} from "socket.io";
 import http from 'http'
 import cors from "cors";
 
-import { PORT } from "./config.js";
+import { ORIGIN, PORT } from "./config.js";
 
 const app = express();
 const server = http.createServer(app);
 const io = new SocketServer(server, {
     cors: {
-        origin:'https://chat-web-socket-io.netlify.app'
+        origin: ORIGIN
     }
 });
 
